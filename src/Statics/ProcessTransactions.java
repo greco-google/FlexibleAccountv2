@@ -60,13 +60,13 @@ public class ProcessTransactions
 
 
 	//Print number of deposits
-	System.out.println(deposits);
+	System.out.println(Account.getNumDeposits());
 	//Print number of withdrawals
-	System.out.println(withdraw);
+	System.out.println(Account.getNumWithdraws());
 	//Print total amount of deposits
-	System.out.println(deposits);
+	System.out.println(Account.getTotalDeposits());
 	//Print total amount of withdrawals
-	System.out.println(withdraw);
+	System.out.println(Account.getTotalWithdraws());
 
 
     }

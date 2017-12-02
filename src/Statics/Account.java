@@ -5,6 +5,10 @@ public class Account
   private static double balance;
   private String name;
   private long acctNum;
+  private static int numDeposits;
+  private static int totalDeposits;
+  private static int numWithdraws;
+  private static int totalWithdraws;
   
   private static int numAccounts = 0;
 
@@ -49,6 +53,9 @@ public class Account
        balance -= amount;
     else
        System.out.println("Insufficient funds");
+ 
+  totalWithdraws += amount;
+  numWithdraws ++;
   }
   		//Automatically declares as local
   public void withdraw(double amount, int fee)
@@ -59,6 +66,9 @@ public class Account
 	    }
 	     else
 	        System.out.println("Insufficient funds");
+	    
+	    totalWithdraws += amount;
+	    numWithdraws ++;
   } 
 
   //----------------------------------------------
@@ -67,6 +77,9 @@ public class Account
   public void deposit(double amount)
   {
     balance += amount;
+    
+    totalDeposits += amount;
+    numDeposits ++;
   }
 
   //----------------------------------------------
@@ -76,7 +89,24 @@ public class Account
   {
     return balance;
   }
+  public long getAcctNumber() {
+	  return acctNum;
+  }
 
+  
+
+public static int getNumDeposits() {
+	return numDeposits;
+}
+public static int getNumWithdraws() {
+	return numWithdraws;
+}
+public static int getTotalDeposits() {
+	return totalDeposits;
+}
+public static int getTotalWithdraws() {
+	return totalWithdraws;
+}
 
   //----------------------------------------------
   // Returns a string containing the name, account number, and balance.
@@ -120,12 +150,17 @@ public void printSummary() {
 	System.out.println("Summary of " + name + " account is: \n" + "Account number " + acctNum + "/n Balance: " + balance);
 	
 }
-public static int getNumDeposits() {
-	return acct3.getbalance;
-	return acct3.getName;
-	return acct3.getAcctNum;
+
+
+public void transfer(Account acct, double amount) {
+	
+	acct.withdraw(amount);
+	this.deposit(amount);
+	System.out.println("You have transfered " + amount + " from " + acct);
+	System.out.println(this);
+	
+	
 }
-public void transfer(Account acct, double amount)
 }
 
 
