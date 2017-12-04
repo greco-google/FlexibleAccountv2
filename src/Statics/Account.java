@@ -147,7 +147,7 @@ public static int getTotalWithdraws() {
   }
 public void printSummary() {
 	// TODO Auto-generated method stub
-	System.out.println("Summary of " + name + " account is: \n" + "Account number " + acctNum + "/n Balance: " + balance);
+	System.out.println("Summary of " + name + " account is: \n" + "Account number " + acctNum + "\n Balance: " + balance);
 	
 }
 
